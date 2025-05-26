@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliosky</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="search-focus">
+  <div class="logo">Bibliosky</div>
+  <div class="search-bar-container">
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar por produto" id="searchInput" onkeyup="filterPrompts()" />
+      <select id="categorySelect" class="select-category" onchange="filterPrompts()">
+        <option value="Todos">Todos</option>
+        <option value="Distopia">Distopia</option>
+        <option value="Biografia">Biografia</option>
+        <option value="Conhecimento">Conhecimento</option>
+        <option value="Fantasia">Fantasia</option>
+        <option value="Manuais">Manuais</option>
+        <option value="Infantil">Infantil</option>
+      </select>
+    </div>
+  </div>
+    <div class="cart-container">
+  <a href="#" class="cart-icon">
+    <ion-icon name="cart-outline"></ion-icon>
+  </a>
+  <span class="cart-counter">0</span>
+  </div>
+    <div id="user-info" class="user-info"></div>
+    <nav id="navigation" class="navigation">
+    <button class="btnLogin-popup" id="login-btn">Login</button>
+    <button class="logout-btn" id="logout-btn">Logout</button>
+  </nav>
+  <span id="user-name" class="user-name"></span>
+</header>
+  <div class="wrapper">
+    <span class="icon-close">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </span>
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" id="login-password" required>
+          <span class="toggle-password" onclick="togglePassword('login-password', this)">
+            <ion-icon name="eye-off-outline"></ion-icon>
+          </span>
+          <label>Senha</label>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" />Lembrar de mim</label>
+          <a href="#" id="forgot-password">Esqueceu a senha?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p id="error-message" style="color: red; font-size: 14px;"></p>
+        <div class="login-register">
+          <p>Não tem uma conta? <a href="#" class="register-link">Registrar-se</a></p>
+        </div>
+      </form>
+    </div>
+    <div class="form-box register">
+      <h2>Registrar-se</h2>
+      <form>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+          <input type="text" id="register-name" required />
+          <label>Nome de usuário</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" id="register-password" required>
+          <span class="toggle-password" onclick="togglePassword('register-password', this)">
+            <ion-icon name="eye-off-outline"></ion-icon>
+          </span>
+          <label>Senha</label>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" />Eu concordo com os termos e condições</label>
+        </div>
+        <button type="submit" class="btn">Registrar</button>
+        <p id="error-message" style="color: red; font-size: 14px;"></p>
+        <div class="login-register">
+          <p>Já tem uma conta? <a href="#" class="login-link">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="content">
+      <div class="prompt"><div class="label">Conhecimento</div><div class="prompt-image"><img src="mente.webp"></div><div class="prompt-info"><h3>Mentes Brilhantes</h3><p>R$40,90</p></div><div class="prompt-description"><p>Autor: Alberto Dell'lsola</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+      <div class="prompt"><div class="label">Distopia</div><div class="prompt-image"><img src="sub.jpg"></div><div class="prompt-info"><h3>Memórias do Subsolo</h3><p>R$54,99</p></div><div class="prompt-description"><p>Autor: Dostoiévski.</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+      <div class="prompt"><div class="label">Distopia</div><div class="prompt-image"><img src="owl.jpg"></div><div class="prompt-info"><h3>A Revolução dos Bichos</h3><p>R$39,00</p></div><div class="prompt-description"><p>Autor: George Orwell</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+      <div class="prompt"><div class="label">Biografia</div><div class="prompt-image"><img src="kafka.jpg"></div><div class="prompt-info"><h3>Cartas ao Pai</h3><p>R$59,90</p></div><div class="prompt-description"><p>Autor: Franz Kafka</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+      <div class="prompt"><div class="label">Distopia</div><div class="prompt-image"><img src="adm.jfif"></div><div class="prompt-info"><h3>Admirável Mundo Novo</h3><p>R$47,70</p></div><div class="prompt-description"><p>Autor: Aldous Huxley</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+      <div class="prompt"><div class="label">Biografia</div><div class="prompt-image"><img src="anna.jfif"></div><div class="prompt-info"><h3>O Diário de Anne Frank</h3><p>R$59,80</p></div><div class="prompt-description"><p>Autor: Anne Frank</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+      <div class="prompt"><div class="label">Conhecimento</div><div class="prompt-image"><img src="animal.jfif"></div><div class="prompt-info"><h3>O Animal Social</h3><p>R$80,50</p></div><div class="prompt-description"><p>Autor: Elliot Aronson</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+      <div class="prompt"><div class="label">Conhecimento</div><div class="prompt-image"><img src="jung.jfif"></div><div class="prompt-info"><h3>O Eu e o Inconsciente</h3><p>R$90,00</p></div><div class="prompt-description"><p>Autor: C. G. Jung</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
+
+      <div id="no-results-message" class="no-results">
+        Nenhum resultado encontrado para sua busca.
+      </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBPHhRtRAzrot-h_E8lub_vvRjed5KM5Bs",
+      authDomain: "menulogin-53f8b.firebaseapp.com",
+      projectId: "menulogin-53f8b",
+      storageBucket: "menulogin-53f8b.firebasestorage.app",
+      messagingSenderId: "124490186602",
+      appId: "1:124490186602:web:d2112fe3438899e511ef13"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
