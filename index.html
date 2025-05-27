@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,35 +16,47 @@
 </div>
 
 <body>
-<header class="search-focus">
-  <div class="logo">Bibliosky</div>
-  <div class="search-bar-container">
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar por produto" id="searchInput" onkeyup="filterPrompts()" />
-      <select id="categorySelect" class="select-category" onchange="filterPrompts()">
-        <option value="Todos">Todos</option>
-        <option value="Distopia">Distopia</option>
-        <option value="Biografia">Biografia</option>
-        <option value="Conhecimento">Conhecimento</option>
-        <option value="Fantasia">Fantasia</option>
-        <option value="Manuais">Manuais</option>
-        <option value="Infantil">Infantil</option>
-      </select>
+  <div class="top-bar">
+    <p class="top-bar-description">Sua livraria online com os melhores títulos!</p>
+  </div>
+  <header class="search-focus">
+    <div class="logo">Bibliosky</div>
+    <div class="search-bar-container">
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar por produto" id="searchInput" onkeyup="filterPrompts()" />
+        <select id="categorySelect" class="select-category" onchange="filterPrompts()">
+          <option value="Todos">Todos</option>
+          <option value="Distopia">Distopia</option>
+          <option value="Biografia">Biografia</option>
+          <option value="Conhecimento">Conhecimento</option>
+          <option value="Fantasia">Fantasia</option>
+          <option value="Manuais">Manuais</option>
+          <option value="Infantil">Infantil</option>
+        </select>
+      </div>
     </div>
-  </div>
     <div class="cart-container">
-  <a href="#" class="cart-icon">
-    <ion-icon name="cart-outline"></ion-icon>
-  </a>
-  <span class="cart-counter">0</span>
-  </div>
+      <a href="#" class="cart-icon">
+        <ion-icon name="cart-outline"></ion-icon>
+      </a>
+      <span class="cart-counter">0</span>
+    </div>
     <div id="user-info" class="user-info"></div>
     <nav id="navigation" class="navigation">
-    <button class="btnLogin-popup" id="login-btn">Login</button>
-    <button class="logout-btn" id="logout-btn">Logout</button>
-  </nav>
-  <span id="user-name" class="user-name"></span>
-</header>
+      <button class="btnLogin-popup" id="login-btn">Login</button>
+      <button class="logout-btn" id="logout-btn">Logout</button>
+    </nav>
+    <span id="user-name" class="user-name"></span>
+  </header>
+  <div class="utility-bar">
+      <a href="#"><span><ion-icon name="location-outline"></ion-icon>Informe seu CEP</span></a>
+      <a href="#">Categorias</a>
+      <a href="#">Mais Vendidos</a>
+      <a href="#">Principais Autores</a>
+      <a href="#">Dicas de Livros</a>
+      <a href="#">Livros Por Idiomas</a>
+      <a href="#">Ofertas 1° Compra</a>
+    </div>
   <div class="wrapper">
     <span class="icon-close">
       <ion-icon name="close-circle-outline"></ion-icon>
@@ -106,18 +119,106 @@
     </div>
   </div>
   <div class="content">
-      <div class="prompt"><div class="label">Conhecimento</div><div class="prompt-image"><img src="mente.webp"></div><div class="prompt-info"><h3>Mentes Brilhantes</h3><p>R$40,90</p></div><div class="prompt-description"><p>Autor: Alberto Dell'lsola</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-      <div class="prompt"><div class="label">Distopia</div><div class="prompt-image"><img src="sub.jpg"></div><div class="prompt-info"><h3>Memórias do Subsolo</h3><p>R$54,99</p></div><div class="prompt-description"><p>Autor: Dostoiévski.</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-      <div class="prompt"><div class="label">Distopia</div><div class="prompt-image"><img src="owl.jpg"></div><div class="prompt-info"><h3>A Revolução dos Bichos</h3><p>R$39,00</p></div><div class="prompt-description"><p>Autor: George Orwell</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-      <div class="prompt"><div class="label">Biografia</div><div class="prompt-image"><img src="kafka.jpg"></div><div class="prompt-info"><h3>Cartas ao Pai</h3><p>R$59,90</p></div><div class="prompt-description"><p>Autor: Franz Kafka</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-      <div class="prompt"><div class="label">Distopia</div><div class="prompt-image"><img src="adm.jfif"></div><div class="prompt-info"><h3>Admirável Mundo Novo</h3><p>R$47,70</p></div><div class="prompt-description"><p>Autor: Aldous Huxley</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-      <div class="prompt"><div class="label">Biografia</div><div class="prompt-image"><img src="anna.jfif"></div><div class="prompt-info"><h3>O Diário de Anne Frank</h3><p>R$59,80</p></div><div class="prompt-description"><p>Autor: Anne Frank</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-      <div class="prompt"><div class="label">Conhecimento</div><div class="prompt-image"><img src="animal.jfif"></div><div class="prompt-info"><h3>O Animal Social</h3><p>R$80,50</p></div><div class="prompt-description"><p>Autor: Elliot Aronson</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-      <div class="prompt"><div class="label">Conhecimento</div><div class="prompt-image"><img src="jung.jfif"></div><div class="prompt-info"><h3>O Eu e o Inconsciente</h3><p>R$90,00</p></div><div class="prompt-description"><p>Autor: C. G. Jung</p></div><div class="subscribe-button" href="#">Ver completo</div></div>
-
-      <div id="no-results-message" class="no-results">
-        Nenhum resultado encontrado para sua busca.
+    <div class="prompt">
+      <div class="label">Conhecimento</div>
+      <div class="prompt-image"><img src="mente.webp"></div>
+      <div class="prompt-info">
+        <h3>Mentes Brilhantes</h3>
+        <p>R$40,90</p>
       </div>
+      <div class="prompt-description">
+        <p>Autor: Alberto Dell'lsola</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+    <div class="prompt">
+      <div class="label">Distopia</div>
+      <div class="prompt-image"><img src="sub.jpg"></div>
+      <div class="prompt-info">
+        <h3>Memórias do Subsolo</h3>
+        <p>R$54,99</p>
+      </div>
+      <div class="prompt-description">
+        <p>Autor: Dostoiévski.</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+    <div class="prompt">
+      <div class="label">Distopia</div>
+      <div class="prompt-image"><img src="owl.jpg"></div>
+      <div class="prompt-info">
+        <h3>A Revolução dos Bichos</h3>
+        <p>R$39,00</p>
+      </div>
+      <div class="prompt-description">
+        <p>Autor: George Orwell</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+    <div class="prompt">
+      <div class="label">Biografia</div>
+      <div class="prompt-image"><img src="kafka.jpg"></div>
+      <div class="prompt-info">
+        <h3>Cartas ao Pai</h3>
+        <p>R$59,90</p>
+      </div>
+      <div class="prompt-description">
+        <p>Autor: Franz Kafka</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+    <div class="prompt">
+      <div class="label">Distopia</div>
+      <div class="prompt-image"><img src="adm.jfif"></div>
+      <div class="prompt-info">
+        <h3>Admirável Mundo Novo</h3>
+        <p>R$47,70</p>
+      </div>
+      <div class="prompt-description">
+        <p>Autor: Aldous Huxley</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+    <div class="prompt">
+      <div class="label">Biografia</div>
+      <div class="prompt-image"><img src="anna.jfif"></div>
+      <div class="prompt-info">
+        <h3>O Diário de Anne Frank</h3>
+        <p>R$59,80</p>
+      </div>
+      <div class="prompt-description">
+        <p>Autor: Anne Frank</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+    <div class="prompt">
+      <div class="label">Conhecimento</div>
+      <div class="prompt-image"><img src="animal.jfif"></div>
+      <div class="prompt-info">
+        <h3>O Animal Social</h3>
+        <p>R$80,50</p>
+      </div>
+      <div class="prompt-description">
+        <p>Autor: Elliot Aronson</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+    <div class="prompt">
+      <div class="label">Conhecimento</div>
+      <div class="prompt-image"><img src="jung.jfif"></div>
+      <div class="prompt-info">
+        <h3>O Eu e o Inconsciente</h3>
+        <p>R$90,00</p>
+      </div>
+      <div class="prompt-description">
+        <p>Autor: C. G. Jung</p>
+      </div>
+      <div class="subscribe-button" href="#">Ver completo</div>
+    </div>
+
+    <div id="no-results-message" class="no-results">
+      Nenhum resultado encontrado para sua busca.
+    </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -139,36 +240,38 @@
 
   <footer class="site-footer">
     <div class="container">
-        <div class="row">
-            <div class="footer-col">
-                <h4>Sobre Nós</h4>
-                <p>Somos uma livraria online apaixonada por livros e em fornecer a melhor experiência de leitura para você.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Categorias</h4>
-                <ul>
-                    <li><a href="#">Distopia</a></li>
-                    <li><a href="#">Biografia</a></li>
-                    <li><a href="#">Conhecimento</a></li>
-                    <li><a href="#">Fantasia</a></li>
-                    <li><a href="#">Manuais</a></li>
-                    <li><a href="#">Infantil</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Siga-nos</h4>
-                <div class="social-links">
-                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-                </div>
-            </div>
+      <div class="row">
+        <div class="footer-col">
+          <h4>Sobre Nós</h4>
+          <p>Somos uma livraria online apaixonada por livros e em fornecer a melhor experiência de leitura para você.
+          </p>
         </div>
-        <div class="copyright">
-            <p>&copy; 2024 Bibliosky. Todos os direitos reservados.</p>
+        <div class="footer-col">
+          <h4>Categorias</h4>
+          <ul>
+            <li><a href="#">Distopia</a></li>
+            <li><a href="#">Biografia</a></li>
+            <li><a href="#">Conhecimento</a></li>
+            <li><a href="#">Fantasia</a></li>
+            <li><a href="#">Manuais</a></li>
+            <li><a href="#">Infantil</a></li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h4>Siga-nos</h4>
+          <div class="social-links">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 Bibliosky. Todos os direitos reservados.</p>
+      </div>
     </div>
-</footer>
+  </footer>
 </body>
+
 </html>
