@@ -23,7 +23,10 @@
     <div class="logo">Bibliosky</div>
     <div class="search-bar-container">
       <div class="search-bar">
-        <input type="text" placeholder="Buscar por produto" id="searchInput" onkeyup="filterPrompts()" />
+        <div class="search-input-wrapper">
+          <ion-icon name="search-outline" class="search-icon"></ion-icon>
+          <input type="text" placeholder="Buscar por produto" id="searchInput" onkeyup="filterPrompts()" />
+        </div>
         <select id="categorySelect" class="select-category" onchange="filterPrompts()">
           <option value="Todos">Todos</option>
           <option value="Distopia">Distopia</option>

@@ -644,6 +644,26 @@ header{
     text-decoration: underline;
 }
 
+.search-input-wrapper {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  width: 100%; 
+}
+
+.search-icon {
+  position: absolute; 
+  left: 10px; 
+  font-size: 1.2em; 
+  color: #555; 
+  z-index: 1; 
+}
+
+
+.search-bar input {
+  padding-left: 35px !important; 
+}
+
 @media (max-width: 574px) {
     .footer-col {
         width: 100%;
