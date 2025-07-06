@@ -29,12 +29,6 @@
         </div>
         <select id="categorySelect" class="select-category" onchange="filterPrompts()">
           <option value="Todos">Todos</option>
-          <option value="Distopia">Distopia</option>
-          <option value="Biografia">Biografia</option>
-          <option value="Conhecimento">Conhecimento</option>
-          <option value="Fantasia">Fantasia</option>
-          <option value="Manuais">Manuais</option>
-          <option value="Infantil">Infantil</option>
         </select>
       </div>
     </div>
@@ -56,9 +50,9 @@
       <a href="#">Categorias</a>
       <a href="#">Mais Vendidos</a>
       <a href="#">Principais Autores</a>
-      <a href="#">Dicas de Livros</a>
       <a href="#">Livros Por Idiomas</a>
       <a href="#">Ofertas 1° Compra</a>
+      <a href="#" id="btn-cadastrar-produto">Cadastrar Produto</a>
     </div>
   <div class="wrapper">
     <span class="icon-close">
@@ -85,6 +79,14 @@
         </div>
         <button type="submit" class="btn">Login</button>
         <p id="error-message" style="color: red; font-size: 14px;"></p>
+
+        <div class="login-separator">
+          <span>Ou entre com</span>
+        </div>
+        <button type="button" class="btn-google" id="btn-google-login">
+          <ion-icon name="logo-google"></ion-icon>
+          Google
+        </button>
         <div class="login-register">
           <p>Não tem uma conta? <a href="#" class="register-link">Registrar-se</a></p>
         </div>
@@ -121,104 +123,46 @@
       </form>
     </div>
   </div>
-  <div class="content">
-    <div class="prompt">
-      <div class="label">Conhecimento</div>
-      <div class="prompt-image"><img src="mente.webp"></div>
-      <div class="prompt-info">
-        <h3>Mentes Brilhantes</h3>
-        <p>R$40,90</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: Alberto Dell'lsola</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
-    <div class="prompt">
-      <div class="label">Distopia</div>
-      <div class="prompt-image"><img src="sub.jpg"></div>
-      <div class="prompt-info">
-        <h3>Memórias do Subsolo</h3>
-        <p>R$54,99</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: Dostoiévski.</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
-    <div class="prompt">
-      <div class="label">Distopia</div>
-      <div class="prompt-image"><img src="owl.jpg"></div>
-      <div class="prompt-info">
-        <h3>A Revolução dos Bichos</h3>
-        <p>R$39,00</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: George Orwell</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
-    <div class="prompt">
-      <div class="label">Biografia</div>
-      <div class="prompt-image"><img src="kafka.jpg"></div>
-      <div class="prompt-info">
-        <h3>Cartas ao Pai</h3>
-        <p>R$59,90</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: Franz Kafka</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
-    <div class="prompt">
-      <div class="label">Distopia</div>
-      <div class="prompt-image"><img src="adm.jfif"></div>
-      <div class="prompt-info">
-        <h3>Admirável Mundo Novo</h3>
-        <p>R$47,70</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: Aldous Huxley</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
-    <div class="prompt">
-      <div class="label">Biografia</div>
-      <div class="prompt-image"><img src="anna.jfif"></div>
-      <div class="prompt-info">
-        <h3>O Diário de Anne Frank</h3>
-        <p>R$59,80</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: Anne Frank</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
-    <div class="prompt">
-      <div class="label">Conhecimento</div>
-      <div class="prompt-image"><img src="animal.jfif"></div>
-      <div class="prompt-info">
-        <h3>O Animal Social</h3>
-        <p>R$80,50</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: Elliot Aronson</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
-    <div class="prompt">
-      <div class="label">Conhecimento</div>
-      <div class="prompt-image"><img src="jung.jfif"></div>
-      <div class="prompt-info">
-        <h3>O Eu e o Inconsciente</h3>
-        <p>R$90,00</p>
-      </div>
-      <div class="prompt-description">
-        <p>Autor: C. G. Jung</p>
-      </div>
-      <div class="subscribe-button" href="#">Ver completo</div>
-    </div>
 
+  <div id="modal-cadastro-produto" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Cadastrar Novo Produto</h2>
+      <form id="form-cadastro-produto">
+        <div class="input-box">
+          <input type="text" id="produto-nome" required />
+          <label>Nome do Produto</label>
+        </div>
+        <div class="input-box">
+          <input type="text" id="produto-autor" required />
+          <label>Autor</label>
+        </div>
+        <div class="input-box">
+          <input type="number" id="produto-preco" step="0.01" required />
+          <label>Preço</label>
+        </div>
+        <div class="input-box">
+          <input type="text" id="produto-imagem" required />
+          <label>URL da Imagem</label>
+        </div>
+        <div class="input-box">
+          <select id="produto-categoria" required>
+            <option value="">Selecione a Categoria</option>
+            <option value="Distopia">Distopia</option>
+            <option value="Biografia">Biografia</option>
+            <option value="Conhecimento">Conhecimento</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Romance">Romance</option>
+            <option value="Manuais">Manuais</option>
+            <option value="Infantil">Infantil</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Cadastrar Produto</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="content">
     <div id="no-results-message" class="no-results">
       Nenhum resultado encontrado para sua busca.
     </div>
@@ -226,7 +170,9 @@
 
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
   <script>
+  
     const firebaseConfig = {
       apiKey: "AIzaSyBPHhRtRAzrot-h_E8lub_vvRjed5KM5Bs",
       authDomain: "menulogin-53f8b.firebaseapp.com",
