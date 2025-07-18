@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Produto | Bibliosky</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detalhes.css">
+</head>
+<body>
+  <div class="top-bar">
+    <p class="top-bar-description">Sua livraria online com os melhores títulos!</p>
+  </div>
+  
+  <header>
+    <div class="logo">Bibliosky</div>
+    <a href="index.html" class="back-button">
+      <ion-icon name="arrow-back-outline"></ion-icon> Voltar
+    </a>
+  </header>
+
+  <div class="product-detail-container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="detail-product-image" src="" alt="">
+      </div>
+      <div class="product-info">
+        <h1 id="detail-product-name"></h1>
+        <p class="product-category" id="detail-product-category"></p>
+        <p class="product-price" id="detail-product-price"></p>
+        <p class="product-author" id="detail-product-author"></p>
+        <button class="add-to-cart-btn">Adicionar ao Carrinho</button>
+        <div class="product-description">
+          <h3>Descrição Completa</h3>
+          <p id="detail-product-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBPHhRtRAzrot-h_E8lub_vvRjed5KM5Bs",
+      authDomain: "menulogin-53f8b.firebaseapp.com",
+      projectId: "menulogin-53f8b",
+      storageBucket: "menulogin-53f8b.firebasestorage.app",
+      messagingSenderId: "124490186602",
+      appId: "1:124490186602:web:d2112fe3438899e511ef13"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="detalhes.js"></script>
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+<script>
+  ClassicEditor.create(document.querySelector('#editor-descricao'))
+    .then(editor => {
+      window.descricaoEditor = editor;
+    });
+</script>
+</body>
+</html>

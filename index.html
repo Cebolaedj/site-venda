@@ -47,12 +47,12 @@
   </header>
   <div class="utility-bar">
       <a href="#"><span><ion-icon name="location-outline"></ion-icon>Informe seu CEP</span></a>
-      <a href="#">Categorias</a>
       <a href="#">Mais Vendidos</a>
       <a href="#">Principais Autores</a>
       <a href="#">Livros Por Idiomas</a>
       <a href="#">Ofertas 1° Compra</a>
       <a href="#" id="btn-cadastrar-produto">Cadastrar Produto</a>
+      <a href="#" id="btn-cadastrar-cliente">Cadastrar Cliente</a>
     </div>
   <div class="wrapper">
     <span class="icon-close">
@@ -124,7 +124,31 @@
     </div>
   </div>
 
+  <div id="clientes-section" class="clientes-section">
+  <div class="clientes-header">
+    <h2>Clientes Cadastrados</h2>
+    <button id="fechar-clientes" class="btn btn-voltar">Voltar para Produtos</button>
+  </div>
+  
+  <div class="clientes-actions">
+    <button class="btn add-cliente-btn">+ Adicionar Cliente</button>
+    <div class="search-bar-container">
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <ion-icon name="search-outline" class="search-icon"></ion-icon>
+          <input type="text" placeholder="Buscar cliente..." id="searchClientInput" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="clientes-list" class="clientes-list">
+    <!-- Lista será preenchida via JavaScript -->
+  </div>
+</div>
+
   <div id="modal-cadastro-produto" class="modal">
+    <p id="error-message" style="color: red; font-size: 14px; margin-top: 10px;"></p>
     <div class="modal-content">
       <span class="close-button">&times;</span>
       <h2>Cadastrar Novo Produto</h2>
@@ -144,6 +168,10 @@
         <div class="input-box">
           <input type="text" id="produto-imagem" required />
           <label>URL da Imagem</label>
+        </div>
+        <div class="input-box">
+          <input type="text" id="produto-descricao" rows="6" required>
+          <label>Descrição Completa</label>
         </div>
         <div class="input-box">
           <select id="produto-categoria" required>
@@ -167,6 +195,36 @@
       Nenhum resultado encontrado para sua busca.
     </div>
   </div>
+
+    <div id="modal-cadastro-cliente" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Cadastrar Novo Cliente</h2>
+    <form id="form-cadastro-cliente">
+      <div class="input-box">
+        <input type="text" id="cliente-nome" required />
+        <label>Nome Completo</label>
+      </div>
+      <div class="input-box">
+        <input type="text" id="cliente-cpf" required />
+        <label>CPF</label>
+      </div>
+      <div class="input-box">
+        <input type="email" id="cliente-email" required />
+        <label>E-mail</label>
+      </div>
+      <div class="input-box">
+        <input type="text" id="cliente-endereco" required />
+        <label>Endereço</label>
+      </div>
+      <div class="input-box">
+        <input type="tel" id="cliente-telefone" required />
+        <label>Telefone</label>
+      </div>
+      <button type="submit" class="btn">Cadastrar Cliente</button>
+    </form>
+  </div>
+</div>
 
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
