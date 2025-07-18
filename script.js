@@ -899,3 +899,24 @@ console.log("Botão adicionar:", document.querySelector(".add-cliente-btn"));
 console.log("Botão voltar:", document.getElementById("fechar-clientes"));
 console.log("Botão clicado - ID:", clienteId);
 console.log("Documento encontrado:", doc.exists, doc.data());
+
+//menu mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.createElement('div');
+    mobileMenuBtn.className = 'mobile-menu-btn';
+    mobileMenuBtn.innerHTML = '<ion-icon name="menu"></ion-icon>';
+    document.body.appendChild(mobileMenuBtn);
+    
+    const nav = document.querySelector('.navigation');
+    if (nav) {
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
+});
+
+window.addEventListener('resize', function() {
+    if (document.activeElement.tagName === 'INPUT') {
+        document.activeElement.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }
+});
